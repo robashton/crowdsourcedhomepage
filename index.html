@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html ng-app lang="en">
 
 <head>
 <!--
@@ -12,7 +12,7 @@ Theme: https://github.com/IronSummitMedia/startbootstrap-grayscale
     <meta name="author" content="">
     <script src="js/jquery.js"></script>
     <script src="js/marquee.js"></script>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
     <title>Crowdsourced Home Page</title>
 
     <!-- Bootstrap Core CSS -->
@@ -84,7 +84,7 @@ Theme: https://github.com/IronSummitMedia/startbootstrap-grayscale
             <div class="container">
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2">
-                        <h1 class="brand-heading">Microsoft Angualr MVP</h1>
+                        <h1 class="brand-heading" ng-model="text" ng-mouseenter="text = 'Angular'" ng-mouseleave="text = 'Angualr'" ng-init="text = 'Angualr'">Microsoft {{text}} MVP</h1>
                         <h3>WTF Certified Technician</h3>
                         <p class="intro-text">I am love big contracts. and parties.</p>
                         <div id="scrollingScrollingScrollingKeepThoseWagonsScrolling">
