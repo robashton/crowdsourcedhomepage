@@ -10,6 +10,8 @@ Theme: https://github.com/IronSummitMedia/startbootstrap-grayscale
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
+    <script src="js/jquery.js"></script>
+    <script src="js/marquee.js"></script>
 
     <title>Crowdsourced Home Page</title>
 
@@ -85,6 +87,10 @@ Theme: https://github.com/IronSummitMedia/startbootstrap-grayscale
                         <h1 class="brand-heading">Microsoft Angualr MVP</h1>
                         <h3>WCF Certified Technician</h3>
                         <p class="intro-text">I am love big contracts. and parties.</p>
+                        <div id="scrollingScrollingScrollingKeepThoseWagonsScrolling">
+                            <marquee scrollamount="2" behavior="alternate" direction="right" width="1000">will "work*" for booze.</marquee>
+                            <marquee scrollamount="2" behavior="alternate" direction="left" width="1000">* consists of offering offensive opinions &amp; tweeting.</marquee>                            
+                        </div>
                         <a href="#mentions" class="btn btn-circle page-scroll">
                             <i class="fa fa-angle-double-down animated"></i>
                         </a>
@@ -130,5 +136,7 @@ Theme: https://github.com/IronSummitMedia/startbootstrap-grayscale
     <script src="js/grayscale.js"></script>
 
 </body>
-
+<script type="text/javascript">
+    $('div.scrollingScrollingScrollingKeepThoseWagonsScrolling marquee').marquee()
+</script>
 </html>
