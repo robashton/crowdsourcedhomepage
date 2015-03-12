@@ -12,3 +12,19 @@ div #scrollingScrollingScrollingKeepThoseWagonsScrolling {
 	font-size: 2.5em;
 }
 /*# sourceMappingURL=site.css.map */
+
+.overlay 
+{
+	position: absolute;
+	top: -5px;
+	right: 220px;
+	width: 100%;
+	height: 100%;
+}
+
+.img-overlay
+{
+	position: relative;
+	padding-right: 100px;
+	padding-top: 100px;
+}
