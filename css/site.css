@@ -56,6 +56,14 @@ div #scrollingScrollingScrollingKeepThoseWagonsScrolling {
   background: black !important;
 }
 
+.ad-malder{
+  width: 516px;
+  height: 1204px;
+  position: absolute;
+  top: 30px;
+  left: 0;
+}
+
 .blink {
   animation: blink 1s steps(5, start) infinite;
   -webkit-animation: blink 1s steps(5, start) infinite;
