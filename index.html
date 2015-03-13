@@ -136,6 +136,9 @@ Theme: https://github.com/IronSummitMedia/startbootstrap-grayscale
                             </marquee>
                             <marquee scrollamount="2" behavior="alternate" direction="left" width="1000" class="blink">* consists of offering offensive opinions &amp; tweeting.</marquee>                            
                         </div>
+                        <div id="cowbell">
+                            <img id="moarCowbell" src="img/cowbell.gif" alt="Moar Cowbell"/>
+                        </div>
                         <a href="#mentions" class="btn btn-circle page-scroll">
                             <i class="fa fa-angle-double-down animated"></i>
                         </a>
@@ -196,6 +199,17 @@ Theme: https://github.com/IronSummitMedia/startbootstrap-grayscale
     <!-- Custom Theme JavaScript -->
     <script src="js/grayscale.js"></script>
     
+<script type="text/javascript">
+    $(function () {
+        var audioElement = document.createElement('audio');
+        audioElement.setAttribute('src', 'audio/COWBELL.mp3');
+        audioElement.load();
+
+        $("#moarCowbell").click(function () {
+            audioElement.play();
+        })
+    });
+</script>
 </form>
 </body>
 </html>
