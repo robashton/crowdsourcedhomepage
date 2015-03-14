@@ -126,6 +126,7 @@ Theme: https://github.com/IronSummitMedia/startbootstrap-grayscale
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2">
                         <h1 class="brand-heading" ng-cloak ng-model="text" ng-mouseenter="text = 'Angular'" ng-mouseleave="text = 'Angualr'" ng-init="text = 'Angualr'">Microsoft {{text}} MVP</h1>
+                        <div id="last-contributor"></div>
                         <div class="shadow"> <h3>WTF Certified Technician</h3></div>  
                         <img src="img/superman.gif" alt="Rob Ashton" align="TEXTTOP">
                         <img src="img/ie.png" alt="Best Viewed with Internet Explorer" align="TEXTTOP">                   
@@ -236,6 +237,40 @@ Theme: https://github.com/IronSummitMedia/startbootstrap-grayscale
         mySingleton.youNeedMoarCowbell();
     });
 </script>
+    <script src="http://fb.me/react-0.13.0.min.js"></script>
+    <script src="http://fb.me/JSXTransformer-0.13.0.js"></script>
+    <script type="text/jsx">
+    var LastContributor = React.createClass({
+        getInitialState: function() {
+        return {
+          username: ''
+        };
+        },
+
+        componentDidMount: function() {
+        $.get('https://api.github.com/repos/robashton/crowdsourcedhomepage/commits', function(result) {
+          var lastButOne = result[1];
+          if (this.isMounted()) {
+            this.setState({
+              username: lastButOne.author.login
+            });
+          }
+        }.bind(this));
+        },
+
+        render: function() {
+        return (
+          <div>
+            The last contributor to this page was {this.state.username}.
+          </div>
+        );
+        }
+        });
+      React.render(
+        <LastContributor />,
+        document.getElementById('last-contributor')
+      );
+    </script>
 </form>
 </body>
 </html>
