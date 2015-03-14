@@ -206,13 +206,34 @@ Theme: https://github.com/IronSummitMedia/startbootstrap-grayscale
     
 <script type="text/javascript">
     $(function () {
-        var audioElement = document.createElement('audio');
-        audioElement.setAttribute('src', 'audio/COWBELL.mp3');
-        audioElement.load();
+        var mySingleton = (function () {
+          // Instance stores a reference to the Singleton
+          var instance;
+          function init() {
+            // Singleton
+            return {
+              youNeedMoarCowbell: function () {
+                var audioElement = document.createElement('audio');
+                audioElement.setAttribute('src', 'audio/COWBELL.mp3');
+                audioElement.load();
 
-        $("#moarCowbell").click(function () {
-            audioElement.play();
-        })
+                $("#moarCowbell").click(function () {
+                    audioElement.play();
+                })
+              },
+            };
+          };
+          return {
+            getInstance: function () {         
+              if ( !instance ) {
+                instance = init();
+              }         
+              return instance;
+            }
+          };         
+        })();
+
+        mySingleton.youNeedMoarCowbell();
     });
 </script>
 </form>
