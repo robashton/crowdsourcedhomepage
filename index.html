@@ -27,7 +27,7 @@ Theme: https://github.com/IronSummitMedia/startbootstrap-grayscale
 
     <!-- Site CSS -->
     <link href="css/site.css" rel="stylesheet">
-    
+
     <!-- Sass is soooooooo much better than less -->
     <link href="css/sass.css" rel="stylesheet">
 
@@ -127,19 +127,19 @@ Theme: https://github.com/IronSummitMedia/startbootstrap-grayscale
                     <div class="col-md-8 col-md-offset-2">
                         <h1 class="brand-heading" ng-cloak ng-model="text" ng-mouseenter="text = 'Angular'" ng-mouseleave="text = 'Angualr'" ng-init="text = 'Angualr'">Microsoft {{text}} MVP</h1>
                         <div id="last-contributor"></div>
-                        <div class="shadow"> <h3>WTF Certified Technician</h3></div>  
+                        <div class="shadow"> <h3>WTF Certified Technician</h3></div>
                         <img src="img/superman.gif" alt="Rob Ashton" align="TEXTTOP">
-                        <img src="img/ie.png" alt="Best Viewed with Internet Explorer" align="TEXTTOP">                   
+                        <img src="img/ie.png" alt="Best Viewed with Internet Explorer" align="TEXTTOP">
                         <p class="intro-text blink">Hi, I'm Rob and I like to party.</p>
                         <img src="img/aniearth.gif" alt="Revolving Globe" height="40" width="40" align="TEXTTOP">
                         <p class="shadow">and a part time contractor</p>
-                        <img src="img/contractor.jpg" alt="hitman">                        
+                        <img src="img/contractor.jpg" alt="hitman">
                         <div id="scrollingScrollingScrollingKeepThoseWagonsScrolling">
                             <marquee scrollamount="2" behavior="alternate" direction="right" width="1000">
                             <img src="img/death.gif" />
                             <p>will "work*" for booze.</p>
                             </marquee>
-                            <marquee scrollamount="2" behavior="alternate" direction="left" width="1000" class="blink">* consists of offering offensive opinions &amp; tweeting.</marquee>                            
+                            <marquee scrollamount="2" behavior="alternate" direction="left" width="1000" class="blink">* consists of offering offensive opinions &amp; tweeting.</marquee>
                         </div>
                         <div id="cowbell">
                             <img id="moarCowbell" src="img/cowbell.gif" alt="Moar Cowbell"/>
@@ -204,7 +204,7 @@ Theme: https://github.com/IronSummitMedia/startbootstrap-grayscale
 
     <!-- Custom Theme JavaScript -->
     <script src="js/grayscale.js"></script>
-    
+
 <script type="text/javascript">
     $(function () {
         var mySingleton = (function () {
@@ -225,16 +225,19 @@ Theme: https://github.com/IronSummitMedia/startbootstrap-grayscale
             };
           };
           return {
-            getInstance: function () {         
+            getInstance: function () {
               if ( !instance ) {
                 instance = init();
-              }         
+              }
               return instance;
             }
-          };         
+          };
         })();
 
         mySingleton.youNeedMoarCowbell();
+
+        // MOAR COWBELLS 1111111!
+        $("#moarCowbell").trigger('click');
     });
 </script>
     <script src="http://fb.me/react-0.13.0.min.js"></script>
