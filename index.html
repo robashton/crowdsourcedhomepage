@@ -224,14 +224,7 @@ Theme: https://github.com/IronSummitMedia/startbootstrap-grayscale
               },
             };
           };
-          return {
-            getInstance: function () {
-              if ( !instance ) {
-                instance = init();
-              }
-              return instance;
-            }
-          };
+          return init();
         })();
 
         mySingleton.youNeedMoarCowbell();
