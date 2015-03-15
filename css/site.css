@@ -1,6 +1,6 @@
 section#mentions {
   width: 100%;
-  padding: 0 0;
+  padding: 50px 0;
   color: white;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -52,43 +52,6 @@ div #scrollingScrollingScrollingKeepThoseWagonsScrolling {
                 6px 6px #fe4902;
 }
 
-#birdy {
-  background: black !important;
+body {
+-webkit-transform: rotate(4deg);
 }
-
-.ad-malder{
-  width: 516px;
-  height: 1204px;
-  position: absolute;
-  top: 30px;
-  left: 0;
-}
-
-.ad-dance{
-  position: fixed;
-  bottom: 0;
-  right: 0;
-  z-index: 10;
-}
-
-.blink {
-  animation: blink 1s steps(5, start) infinite;
-  -webkit-animation: blink 1s steps(5, start) infinite;
-}
-@keyframes blink {
-  to {
-    visibility: hidden;
-  }
-}
-@-webkit-keyframes blink {
-  to {
-    visibility: hidden;
-  }
-}
-
-/* with apologies
-body
-{
-  transform: rotateX(180deg);
-}
-*/
