@@ -39,6 +39,7 @@ div #scrollingScrollingScrollingKeepThoseWagonsScrolling {
    -moz-transition:    all 0.12s ease-out;
    -ms-transition:     all 0.12s ease-out;
    -o-transition:      all 0.12s ease-out;
+   transition:         all 0.12s ease-out;
 }
 .shadow:hover {
    position: relative; 
@@ -54,4 +55,5 @@ div #scrollingScrollingScrollingKeepThoseWagonsScrolling {
 
 body {
 -webkit-transform: rotate(4deg);
+transform: rotate(4deg);
 }
