@@ -83,8 +83,5 @@ div #scrollingScrollingScrollingKeepThoseWagonsScrolling {
 }
 
 body {
--webkit-transform: rotate(4deg);
-transform: rotate(4deg);
--webkit-animation: sk-rotateplane 1.2s infinite ease-in-out;
-  animation: sk-rotateplane 1.2s infinite ease-in-out;
+    animation: shake-fast 5s ease-in-out infinite;
 }
