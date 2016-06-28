@@ -83,5 +83,5 @@ div #scrollingScrollingScrollingKeepThoseWagonsScrolling {
 }
 
 body {
-    animation: shake-fast 5s ease-in-out infinite;
+    animation: shake-hard 5s ease-in-out infinite;
 }
