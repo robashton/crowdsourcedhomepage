@@ -1,0 +1,87 @@
+section#mentions {
+  width: 100%;
+  padding: 50px 0;
+  color: white;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+}
+div #scrollingScrollingScrollingKeepThoseWagonsScrolling {
+	font-family: "Comic Sans MS";
+	font-size: 2.5em;
+}
+/*# sourceMappingURL=site.css.map */
+
+.overlay 
+{
+	position: absolute;
+	top: -5px;
+	right: 220px;
+	width: 100%;
+	height: 100%;
+}
+
+.img-overlay
+{
+	position: relative;
+	padding-right: 100px;
+	padding-top: 100px;
+}
+
+.shadow { 
+   color: white; 
+   font: bold 52px Helvetica, Arial, Sans-Serif;
+   text-shadow: 1px 1px #fe4902, 
+                2px 2px #fe4902, 
+                3px 3px #fe4902;
+   -webkit-transition: all 0.12s ease-out;
+   -moz-transition:    all 0.12s ease-out;
+   -ms-transition:     all 0.12s ease-out;
+   -o-transition:      all 0.12s ease-out;
+   transition:         all 0.12s ease-out;
+}
+.shadow:hover {
+   position: relative; 
+   top: -3px; 
+   left: -3px; 
+   text-shadow: 1px 1px #fe4902, 
+                2px 2px #fe4902, 
+                3px 3px #fe4902, 
+                4px 4px #fe4902, 
+                5px 5px #fe4902, 
+                6px 6px #fe4902;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  background-color: #333;
+
+  margin: 100px auto;
+  -webkit-animation: sk-rotateplane 1.2s infinite ease-in-out;
+  animation: sk-rotateplane 1.2s infinite ease-in-out;
+}
+
+@-webkit-keyframes sk-rotateplane {
+  0% { -webkit-transform: perspective(120px) }
+  50% { -webkit-transform: perspective(120px) rotateY(180deg) }
+  100% { -webkit-transform: perspective(120px) rotateY(180deg)  rotateX(180deg) }
+}
+
+@keyframes sk-rotateplane {
+  0% { 
+    transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+    -webkit-transform: perspective(120px) rotateX(0deg) rotateY(0deg) 
+  } 50% { 
+    transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
+    -webkit-transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg) 
+  } 100% { 
+    transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+    -webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+  }
+}
+
+body {
+    animation: shake-hard 5s ease-in-out infinite;
+}
