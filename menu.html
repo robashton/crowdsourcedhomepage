@@ -5,6 +5,7 @@
 	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 	<link rel="icon" href="favicon.ico" type="image/x-icon">
 	<link rel="stylesheet" type="text/css" href="http://csshake.surge.sh/csshake.min.css">
+	<link rel="stylesheet" href="css/code128.css" type="text/css">
  </HEAD>
  <BODY>
  	<marquee>Busy learning MSBuild for I love it with all my heart</marquee>
@@ -17,5 +18,30 @@
 	<img src="img/notepad4.gif" border="0" alt="Notepad mania..">
 	<img src="http://kopimi.com/kopimi/monika.gif" width="150" class="shake-slow shake-constant">
 	<!-- end image -->
+	<a href="http://zanstra.com/my/BarcodeClock.html" title="Click for useful clocks" style="color:black" target="_top">
+		<div id="bar128clock" class="barcode2" style="transform:rotate(-90deg);width:250px;height:100px;margin-top:85px;margin-left:-75px"></div>
+	</a>
+	<script src="js/code128.js"></script>
+	<script>
+(function(divId) 
+	{ 	var divElement;
+		function getTimeString() 
+			{   var pad = function(n) { return n < 10 ? '0' + n.toString(10) : n.toString(10); }
+				,   dt = new Date
+				;
+				return [pad(dt.getHours()), pad(dt.getMinutes()), pad(dt.getSeconds())].join(':')
+			}
+		function updateClock() 
+			{	divElement.innerHTML = code128(getTimeString())
+			}
+		document.addEventListener("DOMContentLoaded", function(event) 
+			{   divElement = document.getElementById(divId)
+			;	updateClock()
+			;	setInterval(updateClock, 1000)
+			}
+		)
+	}
+)('bar128clock')
+	</script>
  </BODY>
  </HTML>
