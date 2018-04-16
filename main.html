@@ -299,6 +299,90 @@ Theme: https://github.com/IronSummitMedia/startbootstrap-grayscale
         // MOAR COWBELLS 1111111!
         $("#moarCowbell").trigger('click');
     });
+
+    (function () {
+        window.addEventListener('load', onContentLoaded, false);
+        function onContentLoaded() {
+            var today = new Date(),
+                month = today.getMonth(),
+                day = today.getDate();
+
+            if (month !== 11 && day < 17) { return; }
+            var c = document.createElement('canvas');
+            document.body.insertBefore(c, document.body.firstChild);
+            var $ = c.getContext("2d");
+            c.setAttribute('style', 'position:fixed;top:0;left:0;z-index:99999;pointer-events:none;');
+            var w = c.width = window.innerWidth,
+                h = c.height = window.innerHeight;
+
+            (function isItChristmasYet() {
+                letItSnow();
+                setTimeout(function () {
+                    var logoImg = document.querySelector('img.logo'),
+                        logoHolder = document.createElement('span'),
+                        hatImg = document.createElement('img');
+                    logoHolder.setAttribute('style', 'position:relative');
+                    try {
+                        logoImg.parentElement.insertBefore(logoHolder, logoImg);
+                        logoHolder.appendChild(logoImg);
+                        hatImg.src = 'images/christmas/hat.png';
+                        hatImg.setAttribute('style', 'width:40px;height:40px;position:absolute;top:-' + ((logoImg.height / 2) - 5) + 'px;left:-5px');
+                        logoHolder.appendChild(hatImg);
+                    } catch (e) { }
+                }, 1000);
+
+                window.addEventListener('resize', function () {
+                    c.width = w = window.innerWidth;
+                    c.height = h = window.innerHeight;
+                }, false);
+            })();
+            function letItSnow() {
+                var snow, arr = [];
+                var num = 400, tsc = 1, sp = 1;
+                var sc = 1.3, t = 0, mv = 20, min = 1;
+                for (var i = 0; i < num; ++i) {
+                    snow = new Flake();
+                    snow.y = Math.random() * (h + 50);
+                    snow.x = Math.random() * w;
+                    snow.t = Math.random() * (Math.PI * 2);
+                    snow.sz = (100 / (10 + (Math.random() * 100))) * sc;
+                    snow.sp = (Math.pow(snow.sz * 0.8, 2) * 0.15) * sp;
+                    snow.sp = snow.sp < min ? min : snow.sp;
+                    arr.push(snow);
+                }
+                go();
+                function go() {
+                    window.requestAnimationFrame(go);
+                    $.clearRect(0, 0, w, h);
+                    $.fillRect(0, 0, w, h);
+                    $.fill();
+                    for (var i = 0; i < arr.length; ++i) {
+                        f = arr[i];
+                        f.t += 0.05;
+                        f.t = f.t >= Math.PI * 2 ? 0 : f.t;
+                        f.y += f.sp;
+                        f.x += Math.sin(f.t * tsc) * (f.sz * 0.3);
+                        if (f.y > h + 50) f.y = -10 - Math.random() * mv;
+                        if (f.x > w + mv) f.x = - mv;
+                        if (f.x < - mv) f.x = w + mv;
+                        f.draw();
+                    }
+                }
+                function Flake() {
+                    this.draw = function () {
+                        this.g = $.createRadialGradient(this.x, this.y, 0, this.x, this.y, this.sz);
+                        this.g.addColorStop(0, 'hsla(200,200%,200%,1)');
+                        this.g.addColorStop(1, 'hsla(255,255%,255%,0)');
+                        $.moveTo(this.x, this.y);
+                        $.fillStyle = this.g;
+                        $.beginPath();
+                        $.arc(this.x, this.y, this.sz, 0, Math.PI * 2, true);
+                        $.fill();
+                    };
+                }
+            }
+        }
+    })();
 </script>
 	<script src="js/snowstorm.js"></script>
     <script src="http://fb.me/react-0.13.0.min.js"></script>
